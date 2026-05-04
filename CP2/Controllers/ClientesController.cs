@@ -37,7 +37,7 @@ public class ClientesController : ControllerBase
     public ActionResult<List<Cliente>> GetByEmail(string email)
     {
         var clientes = _context.Clientes
-            .Where(c => c.Email.Contains(email))
+            .Where(c => c.Email !=null && c.Email.Contains(email))
             .ToList();
         
         return Ok(clientes);
