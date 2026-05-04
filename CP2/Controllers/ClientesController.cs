@@ -33,7 +33,7 @@ public class ClientesController : ControllerBase
         return Ok(cliente);
     }
 
-    [HttpGet("email/email")]
+    [HttpGet("email/{email}")]
     public ActionResult<List<Cliente>> GetByEmail(string email)
     {
         var clientes = _context.Clientes
