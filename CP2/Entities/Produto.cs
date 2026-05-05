@@ -9,6 +9,6 @@ public class Produto
     [Required(ErrorMessage = "Informe o nome do produto")]
     [StringLength(150,  MinimumLength = 3)]
     public string Nome { get; set; } = string.Empty;
-    [Range(typeof(decimal), "0.01", "9999999999", ErrorMessage = "Preço deve ser superior que 0")]
+    [Range( 0.01, 9999999999.0, ErrorMessage = "Preço deve ser superior que 0")]
     public decimal Preco { get; set; }
 }
