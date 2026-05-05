@@ -1,8 +1,14 @@
-﻿namespace CP2.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CP2.Entities;
 
 public class Produto
 {
+    [Key]
     public int Id { get; set;  }
-    public string Nome { get; set; } = string.Empty; 
+    [Required(ErrorMessage = "Informe o nome do produto")]
+    [StringLength(150,  MinimumLength = 3)]
+    public string Nome { get; set; } = string.Empty;
+    [Range(typeof(decimal), "0.01", "9999999999", ErrorMessage = "Preço deve ser superior que 0")]
     public decimal Preco { get; set; }
 }
