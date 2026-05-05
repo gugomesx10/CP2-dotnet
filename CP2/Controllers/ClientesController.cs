@@ -59,6 +59,9 @@ public class ClientesController : ControllerBase
             return  BadRequest();
         
         var existente = _context.Clientes.Find(id);
+        
+        if  (existente == null)
+            return NotFound();
 
         existente.Nome = cliente.Nome;
         existente.Email = cliente.Email;
