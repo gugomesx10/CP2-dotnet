@@ -1,3 +1,4 @@
+using System.Reflection;
 using CP2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
@@ -21,6 +22,10 @@ builder.Services.AddSwaggerGen(options =>
         Title = "CP2 API",
         Version = "v1"
     });
+
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    options.IncludeXmlComments(xmlPath);
 });
 
 var app = builder.Build();

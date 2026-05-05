@@ -23,9 +23,12 @@ public class ProdutosController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [ProducesResponseType(typeof(Produto), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public ActionResult<Produto> GetById(int id)
     {
         var produto = _context.Produtos.Find(id);
+        
         if (produto == null)        
             return NotFound();
         
@@ -44,10 +47,13 @@ public class ProdutosController : ControllerBase
     }
 
     [HttpPost]
+    [ProducesResponseType(typeof(Produto), StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult<Produto> Post(Produto produto)
     {
         _context.Produtos.Add(produto);
         _context.SaveChanges();
+        
         return Created("", produto);
     }
 

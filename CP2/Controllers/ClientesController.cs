@@ -23,6 +23,8 @@ public class ClientesController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [ProducesResponseType(typeof(Cliente), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public ActionResult<Cliente> GetById(int id)
     {
         var cliente = _context.Clientes.Find(id);
@@ -44,6 +46,8 @@ public class ClientesController : ControllerBase
     }
 
     [HttpPost]
+    [ProducesResponseType(typeof(Cliente), StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult<Cliente> Post(Cliente cliente)
     {
         _context.Clientes.Add(cliente);
