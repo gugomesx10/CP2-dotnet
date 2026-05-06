@@ -15,7 +15,7 @@
 
 ## 📋 Descrição do Projeto
 
-API RESTful desenvolvida em **ASP.NET Core (.NET 8)** com **Entity Framework Core** e banco de dados **Oracle**. O projeto expõe três recursos principais — **Clientes**, **Produtos** e **Categorias** — com CRUD completo, validações, uso correto de Status Codes e documentação via Swagger.
+API RESTful desenvolvida em **ASP.NET Core (.NET 8)** com **Entity Framework Core** e banco de dados **Oracle**. O projeto expõe quatro recursos principais — **Clientes**, **Produtos**, **Categorias** e **Pedidos** — com CRUD completo, validações, uso correto de Status Codes e documentação via Swagger.
 
 ---
 
@@ -39,10 +39,12 @@ CP2/
 ├── Controllers/
 │   ├── CategoriaController.cs
 │   ├── ClientesController.cs
+│   ├── PedidosController.cs
 │   └── ProdutosController.cs
 ├── Entities/
 │   ├── Categoria.cs
 │   ├── Cliente.cs
+│   ├── Pedido.cs
 │   └── Produto.cs
 ├── Data/
 │   └── ApplicationContext.cs
@@ -128,6 +130,18 @@ http://localhost:<porta>/swagger
 | Nome | string | Nome da categoria |
 | Descricao | string? | Descrição opcional da categoria |
 
+### Pedido
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| Id | int | Identificador único (PK) |
+| ClienteId | int | ID do cliente (FK) |
+| ProdutoId | int | ID do produto (FK) |
+| Quantidade | int | Quantidade do produto (1–999) |
+| ValorTotal | decimal | Valor total do pedido |
+| DataPedido | DateTime | Data do pedido (default: now) |
+| Status | string | Status do pedido (ex: Pendente, Entregue) |
+
 ---
 
 ## 🌐 Endpoints Disponíveis
@@ -164,6 +178,18 @@ http://localhost:<porta>/swagger
 | POST | `/api/categorias` | Cria uma nova categoria | 201 Created / 400 Bad Request |
 | PUT | `/api/categorias/{id}` | Atualiza uma categoria existente | 200 OK / 400 Bad Request / 404 Not Found |
 | DELETE | `/api/categorias/{id}` | Remove uma categoria | 204 No Content / 404 Not Found |
+
+### Pedidos — `/api/pedidos`
+
+| Método | Rota | Descrição | Status de Retorno |
+|---|---|---|---|
+| GET | `/api/pedidos` | Lista todos os pedidos | 200 OK |
+| GET | `/api/pedidos/{id}` | Busca pedido por ID | 200 OK / 404 Not Found |
+| GET | `/api/pedidos/cliente/{clienteId}` | Busca pedidos por cliente | 200 OK |
+| GET | `/api/pedidos/status/{status}` | Busca pedidos por status | 200 OK |
+| POST | `/api/pedidos` | Cria um novo pedido | 201 Created / 400 Bad Request |
+| PUT | `/api/pedidos/{id}` | Atualiza um pedido existente | 200 OK / 400 Bad Request / 404 Not Found |
+| DELETE | `/api/pedidos/{id}` | Remove um pedido | 204 No Content / 404 Not Found |
 
 ---
 
@@ -283,6 +309,64 @@ http://localhost:<porta>/swagger
   "id": 1,
   "nome": "Eletrônicos e Informática",
   "descricao": "Computadores, notebooks e acessórios"
+}
+```
+
+---
+
+### POST `/api/pedidos`
+
+```json
+{
+  "id": 0,
+  "clienteId": 1,
+  "produtoId": 1,
+  "quantidade": 2,
+  "valorTotal": 7199.98,
+  "dataPedido": "2026-05-06T00:00:00",
+  "status": "Pendente"
+}
+```
+
+**Resposta — 201 Created:**
+```json
+{
+  "id": 1,
+  "clienteId": 1,
+  "produtoId": 1,
+  "quantidade": 2,
+  "valorTotal": 7199.98,
+  "dataPedido": "2026-05-06T00:00:00",
+  "status": "Pendente"
+}
+```
+
+---
+
+### PUT `/api/pedidos/1`
+
+```json
+{
+  "id": 1,
+  "clienteId": 1,
+  "produtoId": 1,
+  "quantidade": 3,
+  "valorTotal": 10799.97,
+  "dataPedido": "2026-05-06T00:00:00",
+  "status": "Entregue"
+}
+```
+
+**Resposta — 200 OK:**
+```json
+{
+  "id": 1,
+  "clienteId": 1,
+  "produtoId": 1,
+  "quantidade": 3,
+  "valorTotal": 10799.97,
+  "dataPedido": "2026-05-06T00:00:00",
+  "status": "Entregue"
 }
 ```
 
