@@ -2,21 +2,20 @@
 
 > **Checkpoint 2 — FIAP**
 >
-> **Aluno:** Gustavo Gomes Martins
-> **RM:** 555999
-> **Aluno:** Matheus de Mattos Vecchi
-> **RM:** 561716
-> **Aluno:** Nicholas Albuquerque Buzo
-> **RM:** 561082
-> **Aluno:** Nicholas Camillo Canadas de Paula
-> **RM:** 561262
 > **Turma:** 2TDSPO
+>
+> | Aluno | RM |
+> |---|---|
+> | Gustavo Gomes Martins | 555999 |
+> | Matheus de Mattos Vecchi | 561716 |
+> | Nicholas Albuquerque Buzo | 561082 |
+> | Nicholas Camillo Canadas de Paula | 561262 |
 
 ---
 
 ## 📋 Descrição do Projeto
 
-API RESTful desenvolvida em **ASP.NET Core (.NET 8)** com **Entity Framework Core** e banco de dados **Oracle**. O projeto expõe dois recursos principais — **Clientes** e **Produtos** — com CRUD completo, validações, uso correto de Status Codes e documentação via Swagger.
+API RESTful desenvolvida em **ASP.NET Core (.NET 8)** com **Entity Framework Core** e banco de dados **Oracle**. O projeto expõe três recursos principais — **Clientes**, **Produtos** e **Categorias** — com CRUD completo, validações, uso correto de Status Codes e documentação via Swagger.
 
 ---
 
@@ -38,9 +37,11 @@ API RESTful desenvolvida em **ASP.NET Core (.NET 8)** com **Entity Framework Cor
 ```
 CP2/
 ├── Controllers/
+│   ├── CategoriaController.cs
 │   ├── ClientesController.cs
 │   └── ProdutosController.cs
 ├── Entities/
+│   ├── Categoria.cs
 │   ├── Cliente.cs
 │   └── Produto.cs
 ├── Data/
@@ -119,6 +120,14 @@ http://localhost:<porta>/swagger
 | Nome | string | Nome do produto |
 | Preco | decimal | Preço do produto |
 
+### Categoria
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| Id | int | Identificador único (PK) |
+| Nome | string | Nome da categoria |
+| Descricao | string? | Descrição opcional da categoria |
+
 ---
 
 ## 🌐 Endpoints Disponíveis
@@ -144,6 +153,17 @@ http://localhost:<porta>/swagger
 | POST | `/api/produtos` | Cria um novo produto | 201 Created / 400 Bad Request |
 | PUT | `/api/produtos/{id}` | Atualiza um produto existente | 204 No Content / 400 Bad Request / 404 Not Found |
 | DELETE | `/api/produtos/{id}` | Remove um produto | 204 No Content / 404 Not Found |
+
+### Categorias — `/api/categorias`
+
+| Método | Rota | Descrição | Status de Retorno |
+|---|---|---|---|
+| GET | `/api/categorias` | Lista todas as categorias | 200 OK |
+| GET | `/api/categorias/{id}` | Busca categoria por ID | 200 OK / 404 Not Found |
+| GET | `/api/categorias/nome/{nome}` | Busca categorias pelo nome | 200 OK |
+| POST | `/api/categorias` | Cria uma nova categoria | 201 Created / 400 Bad Request |
+| PUT | `/api/categorias/{id}` | Atualiza uma categoria existente | 200 OK / 400 Bad Request / 404 Not Found |
+| DELETE | `/api/categorias/{id}` | Remove uma categoria | 204 No Content / 404 Not Found |
 
 ---
 
@@ -223,6 +243,48 @@ http://localhost:<porta>/swagger
 ```
 
 **Resposta — 204 No Content**
+
+---
+
+### POST `/api/categorias`
+
+```json
+{
+  "id": 0,
+  "nome": "Eletrônicos",
+  "descricao": "Produtos eletrônicos em geral"
+}
+```
+
+**Resposta — 201 Created:**
+```json
+{
+  "id": 1,
+  "nome": "Eletrônicos",
+  "descricao": "Produtos eletrônicos em geral"
+}
+```
+
+---
+
+### PUT `/api/categorias/1`
+
+```json
+{
+  "id": 1,
+  "nome": "Eletrônicos e Informática",
+  "descricao": "Computadores, notebooks e acessórios"
+}
+```
+
+**Resposta — 200 OK:**
+```json
+{
+  "id": 1,
+  "nome": "Eletrônicos e Informática",
+  "descricao": "Computadores, notebooks e acessórios"
+}
+```
 
 ---
 
