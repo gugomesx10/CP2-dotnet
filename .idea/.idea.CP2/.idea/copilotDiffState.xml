@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="/Produto (snapshot).cs">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="/Produto (snapshot).cs" />
+              <option name="originalContent" value="using System.ComponentModel.DataAnnotations;&#10;&#10;namespace CP2.Entities;&#10;&#10;public class Produto&#10;{&#10;    [Key]&#10;    public int Id { get; set;  }&#10;    [Required(ErrorMessage = &quot;Informe o nome do produto&quot;)]&#10;    [StringLength(150,  MinimumLength = 3)]&#10;    public string Nome { get; set; } = string.Empty;&#10;    [Range(typeof(decimal), &quot;0.01&quot;, &quot;9999999999&quot;, ErrorMessage = &quot;Preço deve ser superior que 0&quot;)]&#10;    public decimal Preco { get; set; }&#10;}" />
+              <option name="updatedContent" value="using System.ComponentModel.DataAnnotations;&#10;&#10;namespace CP2.Entities;&#10;&#10;public class Produto&#10;{&#10;    [Key]&#10;    public int Id { get; set;  }&#10;    [Required(ErrorMessage = &quot;Informe o nome do produto&quot;)]&#10;    [StringLength(150,  MinimumLength = 3)]&#10;    public string Nome { get; set; } = string.Empty;&#10;    [Range(0.01, 9999999999.0, ErrorMessage = &quot;Preço deve ser superior que 0&quot;)]&#10;    public decimal Preco { get; set; }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

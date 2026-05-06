@@ -4,6 +4,12 @@
 >
 > **Aluno:** Gustavo Gomes Martins
 > **RM:** 555999
+> **Aluno:** Matheus de Mattos Vecchi
+> **RM:** 561716
+> **Aluno:** Nicholas Albuquerque Buzo
+> **RM:** 561082
+> **Aluno:** Nicholas Camillo Canadas de Paula
+> **RM:** 561262
 > **Turma:** 2TDSPO
 
 ---
