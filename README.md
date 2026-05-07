@@ -177,7 +177,8 @@ http://localhost:<porta>/swagger
 {
   "id": 0,
   "nome": "Gustavo Gomes",
-  "email": "gustavo@email.com"
+  "email": "gustavo@email.com",
+  "endereco": "Rua das Flores, 123"
 }
 ```
 
@@ -186,7 +187,8 @@ http://localhost:<porta>/swagger
 {
   "id": 1,
   "nome": "Gustavo Gomes",
-  "email": "gustavo@email.com"
+  "email": "gustavo@email.com",
+  "endereco": "Rua das Flores, 123"
 }
 ```
 
@@ -198,7 +200,8 @@ http://localhost:<porta>/swagger
 {
   "id": 1,
   "nome": "Gustavo Gomes Martins",
-  "email": "gustavo.martins@email.com"
+  "email": "gustavo.martins@email.com",
+  "endereco": "Rua das Flores, 123"
 }
 ```
 
@@ -207,7 +210,8 @@ http://localhost:<porta>/swagger
 {
   "id": 1,
   "nome": "Gustavo Gomes Martins",
-  "email": "gustavo.martins@email.com"
+  "email": "gustavo.martins@email.com",
+  "endereco": "Rua das Flores, 123"
 }
 ```
 
