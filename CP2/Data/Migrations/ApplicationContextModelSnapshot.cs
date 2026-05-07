@@ -41,7 +41,7 @@ namespace CP2.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categorias");
+                    b.ToTable("TB_CATEGORIA");
                 });
 
             modelBuilder.Entity("CP2.Entities.Cliente", b =>
@@ -64,7 +64,7 @@ namespace CP2.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clientes");
+                    b.ToTable("TB_CLIENTE");
                 });
 
             modelBuilder.Entity("CP2.Entities.Pedido", b =>
@@ -97,7 +97,7 @@ namespace CP2.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pedidos");
+                    b.ToTable("TB_PEDIDO");
                 });
 
             modelBuilder.Entity("CP2.Entities.Produto", b =>
@@ -118,7 +118,7 @@ namespace CP2.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Produtos");
+                    b.ToTable("TB_PRODUTO");
                 });
 #pragma warning restore 612, 618
         }
