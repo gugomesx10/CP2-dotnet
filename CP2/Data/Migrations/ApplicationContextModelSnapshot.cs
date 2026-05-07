@@ -36,6 +36,10 @@ namespace CP2.Migrations
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
+                    
+                    b.Property<string>("Endereco")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
 
                     b.HasKey("Id");
 

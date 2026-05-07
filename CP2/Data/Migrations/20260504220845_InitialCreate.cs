@@ -17,7 +17,8 @@ namespace CP2.Migrations
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
                     Nome = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    Email = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false)
+                    Email = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    Endereco = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false)
                 },
                 constraints: table =>
                 {

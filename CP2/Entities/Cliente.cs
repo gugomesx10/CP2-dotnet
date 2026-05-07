@@ -13,4 +13,7 @@ public class Cliente
     [EmailAddress(ErrorMessage = "Email inválido")]
     [StringLength(150)]
     public string Email { get; set; }  = string.Empty;
+    [Required(ErrorMessage = "Informe o endereço do cliente")]
+    [StringLength(100, MinimumLength = 10, ErrorMessage = "O endereço deve conter entre 10 e 100 caracteres")]
+    public string Endereco { get; set; } = string.Empty;
 }
