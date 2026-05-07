@@ -57,6 +57,11 @@ namespace CP2.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("NVARCHAR2(150)");
 
+                    b.Property<string>("Endereco")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("NVARCHAR2(100)");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -118,7 +123,7 @@ namespace CP2.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TB_PRODUTO");
+                    b.ToTable("TB_PRDUTO");
                 });
 #pragma warning restore 612, 618
         }

@@ -108,11 +108,12 @@ http://localhost:<porta>/swagger
 
 ### Cliente
 
-| Campo | Tipo | Descrição |
-|---|---|---|
-| Id | int | Identificador único (PK) |
-| Nome | string | Nome do cliente |
-| Email | string | E-mail do cliente |
+| Campo    | Tipo | Descrição                |
+|----------|---|--------------------------|
+| Id       | int | Identificador único (PK) |
+| Nome     | string | Nome do cliente          |
+| Email    | string | E-mail do cliente        |
+| Endereço | string | Endereço do cliente      |
 
 ### Produto
 
@@ -148,14 +149,15 @@ http://localhost:<porta>/swagger
 
 ### Clientes — `/api/clientes`
 
-| Método | Rota | Descrição | Status de Retorno |
-|---|---|---|---|
-| GET | `/api/clientes` | Lista todos os clientes | 200 OK |
-| GET | `/api/clientes/{id}` | Busca cliente por ID | 200 OK / 404 Not Found |
-| GET | `/api/clientes/email/{email}` | Busca clientes por e-mail | 200 OK |
-| POST | `/api/clientes` | Cria um novo cliente | 201 Created / 400 Bad Request |
-| PUT | `/api/clientes/{id}` | Atualiza um cliente existente | 200 OK / 400 Bad Request / 404 Not Found |
-| DELETE | `/api/clientes/{id}` | Remove um cliente | 204 No Content / 404 Not Found |
+| Método | Rota                                | Descrição                     | Status de Retorno |
+|---|-------------------------------------|-------------------------------|---|
+| GET | `/api/clientes`                     | Lista todos os clientes       | 200 OK |
+| GET | `/api/clientes/{id}`                | Busca cliente por ID          | 200 OK / 404 Not Found |
+| GET | `/api/clientes/email/{email}`       | Busca clientes por e-mail     | 200 OK |
+| GET | `/api/clientes/endereco/{endereco}` | Busca clientes por endereco   | 200 OK |
+| POST | `/api/clientes`                     | Cria um novo cliente          | 201 Created / 400 Bad Request |
+| PUT | `/api/clientes/{id}`                | Atualiza um cliente existente | 200 OK / 400 Bad Request / 404 Not Found |
+| DELETE | `/api/clientes/{id}`                | Remove um cliente             | 204 No Content / 404 Not Found |
 
 ### Produtos — `/api/produtos`
 
@@ -201,7 +203,8 @@ http://localhost:<porta>/swagger
 {
   "id": 0,
   "nome": "Gustavo Gomes",
-  "email": "gustavo@email.com"
+  "email": "gustavo@email.com",
+  "endereco": "Rua das Flores, 123"
 }
 ```
 
@@ -210,7 +213,8 @@ http://localhost:<porta>/swagger
 {
   "id": 1,
   "nome": "Gustavo Gomes",
-  "email": "gustavo@email.com"
+  "email": "gustavo@email.com",
+  "endereco": "Rua das Flores, 123"
 }
 ```
 
@@ -222,7 +226,8 @@ http://localhost:<porta>/swagger
 {
   "id": 1,
   "nome": "Gustavo Gomes Martins",
-  "email": "gustavo.martins@email.com"
+  "email": "gustavo.martins@email.com",
+  "endereco": "Rua das Flores, 123"
 }
 ```
 
@@ -231,7 +236,8 @@ http://localhost:<porta>/swagger
 {
   "id": 1,
   "nome": "Gustavo Gomes Martins",
-  "email": "gustavo.martins@email.com"
+  "email": "gustavo.martins@email.com",
+  "endereco": "Rua das Flores, 123"
 }
 ```
 

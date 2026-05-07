@@ -12,7 +12,7 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace CP2.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20260507000259_InitialCreate")]
+    [Migration("20260507012805_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -59,6 +59,11 @@ namespace CP2.Migrations
                         .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("NVARCHAR2(150)");
+
+                    b.Property<string>("Endereco")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("NVARCHAR2(100)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -121,7 +126,7 @@ namespace CP2.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TB_PRODUTO");
+                    b.ToTable("TB_PRDUTO");
                 });
 #pragma warning restore 612, 618
         }

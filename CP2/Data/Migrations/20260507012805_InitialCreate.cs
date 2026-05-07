@@ -12,7 +12,7 @@ namespace CP2.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Categorias",
+                name: "TB_CATEGORIA",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
@@ -22,25 +22,26 @@ namespace CP2.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categorias", x => x.Id);
+                    table.PrimaryKey("PK_TB_CATEGORIA", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Clientes",
+                name: "TB_CLIENTE",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
                     Nome = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
-                    Email = table.Column<string>(type: "NVARCHAR2(150)", maxLength: 150, nullable: false)
+                    Email = table.Column<string>(type: "NVARCHAR2(150)", maxLength: 150, nullable: false),
+                    Endereco = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Clientes", x => x.Id);
+                    table.PrimaryKey("PK_TB_CLIENTE", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Pedidos",
+                name: "TB_PEDIDO",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
@@ -54,11 +55,11 @@ namespace CP2.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Pedidos", x => x.Id);
+                    table.PrimaryKey("PK_TB_PEDIDO", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Produtos",
+                name: "TB_PRDUTO",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
@@ -68,7 +69,7 @@ namespace CP2.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Produtos", x => x.Id);
+                    table.PrimaryKey("PK_TB_PRDUTO", x => x.Id);
                 });
         }
 
@@ -76,16 +77,16 @@ namespace CP2.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Categorias");
+                name: "TB_CATEGORIA");
 
             migrationBuilder.DropTable(
-                name: "Clientes");
+                name: "TB_CLIENTE");
 
             migrationBuilder.DropTable(
-                name: "Pedidos");
+                name: "TB_PEDIDO");
 
             migrationBuilder.DropTable(
-                name: "Produtos");
+                name: "TB_PRDUTO");
         }
     }
 }
