@@ -108,12 +108,12 @@ http://localhost:<porta>/swagger
 
 ### Cliente
 
-| Campo    | Tipo | Descrição                |
-|----------|---|--------------------------|
-| Id       | int | Identificador único (PK) |
-| Nome     | string | Nome do cliente          |
-| Email    | string | E-mail do cliente        |
-| Endereço | string | Endereço do cliente      |
+| Campo    | Tipo   | Obrigatório | Validações                                      | Descrição                |
+|----------|--------|-------------|-------------------------------------------------|--------------------------|
+| Id       | int    | —           | —                                               | Identificador único (PK) |
+| Nome     | string | ✅ Sim      | Entre 3 e 100 caracteres                        | Nome do cliente          |
+| Email    | string | ✅ Sim      | Formato de e-mail válido; máx. 150 caracteres   | E-mail do cliente        |
+| Endereco | string | ✅ Sim      | Entre 10 e 100 caracteres                       | Endereço do cliente      |
 
 ### Produto
 
