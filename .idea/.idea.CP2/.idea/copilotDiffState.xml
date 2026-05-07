@@ -3,6 +3,15 @@
   <component name="CopilotDiffPersistence">
     <option name="pendingDiffs">
       <map>
+        <entry key="/Categoria (snapshot).cs">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="/Categoria (snapshot).cs" />
+              <option name="originalContent" value="using System.ComponentModel.DataAnnotations;&#10;&#10;namespace CP2.Entities;&#10;&#10;public class Categoria&#10;{&#10;    [Key]&#10;    public int Id { get; set; }&#10;&#10;    [Required(ErrorMessage = &quot;Informe o nome da categoria&quot;)]&#10;    [StringLength(100, MinimumLength = 3, ErrorMessage = &quot;O nome deve conter entre 3 e 100 caracteres&quot;)]&#10;    public string Nome { get; set; } = string.Empty;&#10;&#10;    [StringLength(255)]&#10;    public string? Descricao { get; set; }&#10;}" />
+              <option name="updatedContent" value="using System.ComponentModel.DataAnnotations;&#13;&#10;using System.ComponentModel.DataAnnotations.Schema;&#13;&#10;&#13;&#10;namespace CP2.Entities;&#13;&#10;&#13;&#10;[Table(&quot;TB_CATEGORIA&quot;)]&#13;&#10;public class Categoria&#13;&#10;{&#13;&#10;    [Key]&#13;&#10;    public int Id { get; set; }&#13;&#10;&#13;&#10;    [Required(ErrorMessage = &quot;Informe o nome da categoria&quot;)]&#13;&#10;    [StringLength(100, MinimumLength = 3, ErrorMessage = &quot;O nome deve conter entre 3 e 100 caracteres&quot;)]&#13;&#10;    public string Nome { get; set; } = string.Empty;&#13;&#10;&#13;&#10;    [StringLength(255)]&#13;&#10;    public string? Descricao { get; set; }&#13;&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
         <entry key="/Produto (snapshot).cs">
           <value>
             <PendingDiffInfo>

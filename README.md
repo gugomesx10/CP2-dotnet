@@ -4,11 +4,12 @@
 >
 > **Turma:** 2TDSPO
 >
-> | Aluno | RM |
-> |---|---|
-> | Gustavo Gomes Martins | 555999 |
-> | Matheus de Mattos Vecchi | 561716 |
-> | Nicholas Albuquerque Buzo | 561082 |
+> | Aluno                             | RM     |
+> |-----------------------------------|--------|
+> | Gustavo Gomes Martins             | 555999 |
+> | Pedro dos Anjos                   | 563832 |
+> | Matheus de Mattos Vecchi          | 561716 |
+> | Nicholas Albuquerque Buzo         | 561082 |
 > | Nicholas Camillo Canadas de Paula | 561262 |
 
 ---
