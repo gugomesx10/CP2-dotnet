@@ -44,6 +44,16 @@ public class ClientesController : ControllerBase
         
         return Ok(clientes);
     }
+    
+    [HttpGet("endereco/{endereco}")]
+    public ActionResult<List<Cliente>> GetByEndereco(string endereco)
+    {
+        var clientes = _context.Clientes
+            .Where(c => c.Endereco !=null && c.Endereco.Contains(endereco))
+            .ToList();
+        
+        return Ok(clientes);
+    }
 
     [HttpPost]
     [ProducesResponseType(typeof(Cliente), StatusCodes.Status201Created)]
@@ -69,6 +79,7 @@ public class ClientesController : ControllerBase
 
         existente.Nome = cliente.Nome;
         existente.Email = cliente.Email;
+        existente.Endereco = cliente.Endereco;
         
         _context.SaveChanges();
         
